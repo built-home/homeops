@@ -6,3 +6,4 @@
 *.HA_VERSION
 *.log
 *.db
+*.storage
