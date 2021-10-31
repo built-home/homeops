@@ -2,3 +2,7 @@
 */terraform.tfstate*
 
 *.tgz
+]
+*.HA_VERSION
+*.log
+*.db
