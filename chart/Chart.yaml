@@ -1,0 +1,9 @@
+apiVersion: v2
+description: Kubernetes infrastructure for homelab
+name: homelab
+version: 0.1.0
+dependencies:
+  - name: home-assistant
+    repository: https://k8s-at-home.com/charts/
+    version: 1.x.x
+    condition: home-assistant.enabled
