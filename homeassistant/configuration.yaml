@@ -10,3 +10,8 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+
+sonos: 
+  media_player:
+    hosts: !secret sonos_hosts
