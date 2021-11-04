@@ -7,3 +7,7 @@ dependencies:
     repository: https://k8s-at-home.com/charts/
     version: 1.x.x
     condition: home-assistant.enabled
+  - name: cert-manager
+    repository: https://charts.jetstack.io
+    version: 0.8
+    condition: cert-manager.enabled
