@@ -10,8 +10,7 @@ spec:
       chart: unifi
       sourceRef:
         kind: HelmRepository
-        name: homeops
-        namespace: homeops
+        name: unifi
   interval: 5m
   postRenderers:
     - kustomize:
