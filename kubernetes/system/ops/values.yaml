@@ -8,6 +8,7 @@ flux:
     path: "kubernetes/apps"
     user: "teaglebuilt"
     email: "dillan.teagle.va@gmail.com"
+    secret_name: flux-ssh
   sops:
     enabled: false
 
