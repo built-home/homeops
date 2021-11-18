@@ -1,0 +1,42 @@
+create-namespace: true
+
+flux:
+  enabled: true
+  git:
+    url: "https://github.com/teaglebuilt/homelab"
+    branch: "master"
+    path: "kubernetes/apps"
+    user: "teaglebuilt"
+    email: "dillan.teagle.va@gmail.com"
+  sops:
+    enabled: false
+
+  kube:
+    # Disable KUBECONFIG env var and passing the default config into the Container
+    # This means you need to provide both on your own, by using extraVars and ExtraVolume(Mounts)
+    externalConfig: false
+    # Override for kubectl default config
+    config: |
+      apiVersion: v1
+      clusters: []
+      contexts:
+      - context:
+          cluster: ""
+          namespace: default
+          user: ""
+        name: default
+      current-context: default
+      kind: Config
+      preferences: {}
+      users: []
+
+helm-operator:
+  enabled: true
+  helm:
+    versions: v3
+
+cert-manager:
+  enabled: true
+
+sealed-secrets:
+  enabled: false

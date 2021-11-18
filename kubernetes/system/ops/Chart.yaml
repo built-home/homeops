@@ -1,0 +1,21 @@
+apiVersion: v2
+description: GitOps for homelab
+name: homeops
+version: 0.1.0
+dependencies:
+  - name: flux
+    repository: https://charts.fluxcd.io
+    version: 1.11.x
+    condition: flux.enabled
+  - name: helm-operator
+    repository: https://charts.fluxcd.io
+    version: 1.4.x
+    condition: helm-operator.enabled
+  - name: cert-manager
+    repository: https://charts.jetstack.io
+    version: 1.6.x
+    condition: cert-manager.enabled
+  - name: sealed-secrets
+    repository: https://bitnami-labs.github.io/sealed-secrets
+    version: 1.16.x
+    condition: sealed-secrets.enabled
