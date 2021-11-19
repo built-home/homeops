@@ -10,7 +10,8 @@ spec:
       chart: unifi
       sourceRef:
         kind: HelmRepository
-        name: unifi
+        name: k8s-at-home
+        namespace: homeops
   interval: 5m
   postRenderers:
     - kustomize:
