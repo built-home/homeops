@@ -1,14 +1,15 @@
 create-namespace: true
 
 flux:
-  enabled: true
+  enabled: false
   git:
-    url: "git@github.com:teaglebuilt/homelab"
-    branch: "master"
-    path: "kubernetes/apps"
-    user: "teaglebuilt"
-    email: "dillan.teagle.va@gmail.com"
+    url: git@github.com:teaglebuilt/homelab
+    branch: master
+    path: kubernetes/apps/base
+    user: teaglebuilt
+    email: dillan.teagle.va@gmail.com
     secret_name: flux-ssh
+    secretDataKey: deploy-key
   sops:
     enabled: false
 
@@ -32,12 +33,19 @@ flux:
       users: []
 
 helm-operator:
+  namespace: flux
   enabled: true
+  createCRD: false
   helm:
     versions: v3
+  git:
+    ssh:
+      secretName: flux-ssh
 
 cert-manager:
   enabled: true
-
+  namespace: cert-manager
+  installCRDs: false
+  
 sealed-secrets:
   enabled: false

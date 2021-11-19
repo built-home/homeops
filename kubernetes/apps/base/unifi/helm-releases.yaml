@@ -11,7 +11,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
-        namespace: homeops
+        namespace: unifi
   interval: 5m
   postRenderers:
     - kustomize:
