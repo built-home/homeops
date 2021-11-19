@@ -12,3 +12,9 @@ spec:
       kind: HelmRelease
       name: unifi
       namespace: unifi
+  sourceRef:
+    kind: GitRepository
+    name: homeops
+  path: ./kubernetes/apps/deploy
+  prune: true
+  validation: client
