@@ -3,7 +3,7 @@ create-namespace: true
 flux:
   enabled: true
   git:
-    url: "https://github.com/teaglebuilt/homelab"
+    url: "git@github.com:teaglebuilt/homelab"
     branch: "master"
     path: "kubernetes/apps"
     user: "teaglebuilt"
