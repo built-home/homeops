@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: infra
-  namespace: homeops
+  namespace: flux-system
 spec:
   interval: 10m0s
   dependsOn:
@@ -18,7 +18,7 @@ spec:
       namespace: ingress-nginx
   sourceRef:
     kind: GitRepository
-    name: homeops
+    name: flux-system
   path: ./kubernetes/infra/dev
   prune: false
   validation: client
