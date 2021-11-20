@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
-    name: apps
+    name: homelab
   path: ./kubernetes/apps/dev
   prune: false
   validation: client

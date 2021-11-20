@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
-    name: helm-repos
+    name: homelab
   path: ./kubernetes/repos
   prune: true
   validation: client
