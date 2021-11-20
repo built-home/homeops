@@ -9,5 +9,5 @@ spec:
     kind: GitRepository
     name: homeops
   path: ./kubernetes/repos
-  prune: true
+  prune: false
   validation: client

@@ -17,5 +17,5 @@ spec:
     kind: GitRepository
     name: homeops
   path: ./kubernetes/apps/dev
-  prune: true
+  prune: false
   validation: client
