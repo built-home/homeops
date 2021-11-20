@@ -2,20 +2,12 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: apps
-  namespace: homelab
+  namespace: flux-system
 spec:
   interval: 10m0s
-  dependsOn:
-    - name: helm-repos
-    - name: infra
-  healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
-      kind: HelmRelease
-      name: unifi
-      namespace: unifi
   sourceRef:
     kind: GitRepository
-    name: homelab
+    name: apps
   path: ./kubernetes/apps/dev
   prune: false
   validation: client
