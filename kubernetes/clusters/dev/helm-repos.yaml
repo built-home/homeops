@@ -9,5 +9,5 @@ spec:
     kind: GitRepository
     name: helm-repos
   path: ./kubernetes/repos
-  prune: false
+  prune: true
   validation: client

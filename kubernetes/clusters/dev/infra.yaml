@@ -9,5 +9,5 @@ spec:
     kind: GitRepository
     name: infra
   path: ./kubernetes/infra/dev
-  prune: false
+  prune: true
   validation: client
