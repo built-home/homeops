@@ -10,7 +10,7 @@ spec:
   ref:
     branch: master
   secretRef:
-    name: homeops
+    name: flux-system
   url: ssh://git@github.com/teaglebuilt/homelab
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
