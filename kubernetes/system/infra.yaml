@@ -5,6 +5,8 @@ metadata:
   namespace: homeops
 spec:
   interval: 10m0s
+  dependsOn:
+    - name: helm-repos
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
