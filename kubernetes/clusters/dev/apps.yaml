@@ -15,7 +15,7 @@ spec:
       namespace: unifi
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: homelab
   path: ./kubernetes/apps/dev
   prune: false
   validation: client
