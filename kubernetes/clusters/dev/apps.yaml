@@ -16,6 +16,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: homeops
-  path: ./kubernetes/apps/deploy
+  path: ./kubernetes/apps/dev
   prune: true
   validation: client
