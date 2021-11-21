@@ -9,5 +9,5 @@ spec:
     kind: GitRepository
     name: homelab
   path: ./kubernetes/apps/dev
-  prune: false
+  prune: true
   validation: client
