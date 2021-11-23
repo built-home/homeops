@@ -18,7 +18,7 @@ spec:
       namespace: ingress-nginx
   sourceRef:
     kind: GitRepository
-    name: homelab
+    name: flux-system
   path: ./kubernetes/infra/dev
   prune: true
   validation: client
