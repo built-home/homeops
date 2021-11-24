@@ -23,11 +23,10 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-production
         nginx.ingress.kubernetes.io/backend-protocol: HTTPS
       hosts:
-        - unifi.teaglebuilt.com
+        - teaglebuilt.tech
       tls:
         - hosts:
-            - unifi.teaglebuilt.com
-          secretName: unifi-teaglebuilt-com-cert
+            - teaglebuilt.tech
     persistence:
       enabled: true
     speedtestService:
