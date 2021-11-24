@@ -29,10 +29,6 @@ spec:
             value: token
       - name: CF_API_EMAIL
         value: dillan.teagle.va@gmail.com
-    cloudflare:
-      secretName: cloudflare-token
-      email: dillan.teagle.va@gmail.com
-      proxied: false
     domainFilters:
       - "teaglebuilt.tech"
     provider: cloudflare
