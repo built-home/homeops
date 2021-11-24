@@ -1,4 +1,3 @@
-
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -7,13 +6,16 @@ metadata:
 spec:
   chart:
     spec:
-      chart: cert-manager
+      chart: bitnami
       sourceRef:
         kind: HelmRepository
-        name: jetstack
+        name: external-dns
         namespace: flux-system
       version: "=5.1.0"
   interval: 5m
+  install:
+    remediation:
+      retries: 3
   values:
     image:
       registry: k8s.gcr.io
