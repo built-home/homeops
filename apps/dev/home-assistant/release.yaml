@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: home-assistant
+spec:
+  releaseName: home-assistant
+  chart:
+    spec:
+      chart: home-assistant
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  values:
+    image:
+      repository: homeassistant/home-assistant
+      tag: 0.114.0
+      pullPolicy: IfNotPresent
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
