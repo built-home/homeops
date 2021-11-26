@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: cert-manager
 resources:
   - namespace.yaml
+  - helm-release.yaml
   - staging.yaml
   - production.yaml
-  - helm-release.yaml
