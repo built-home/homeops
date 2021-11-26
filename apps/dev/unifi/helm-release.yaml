@@ -4,9 +4,15 @@ metadata:
   name: unifi
   namespace: unifi
 spec:
+  releaseName: unifi
   chart:
     spec:
-      version: "=>2.0.2 <2.1.0"
+      chart: unifi
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
   values:
     timezone: Europe/Madrid
     controllerService:
@@ -23,10 +29,13 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-production
         nginx.ingress.kubernetes.io/backend-protocol: HTTPS
       hosts:
-        - teaglebuilt.tech
+      - host: unifi.teaglebuilt.tech
+        paths:
+        - path: /
+          pathType: Prefix
       tls:
-        - hosts:
-            - teaglebuilt.tech
+      - hosts:
+        - unifi.teaglebuilt.tech
     persistence:
       enabled: true
     speedtestService:
