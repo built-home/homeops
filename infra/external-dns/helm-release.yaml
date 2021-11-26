@@ -6,10 +6,10 @@ metadata:
 spec:
   chart:
     spec:
-      chart: bitnami
+      chart: external-dns
       sourceRef:
         kind: HelmRepository
-        name: external-dns
+        name: bitnami
         namespace: flux-system
       version: "=5.1.0"
   interval: 5m
