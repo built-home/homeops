@@ -1,0 +1,11 @@
+piVersion: cert-manager.k8s.cloudflare.com/v1
+kind: OriginIssuer
+metadata:
+  name: prod-issuer
+  namespace: default
+spec:
+  signatureType: OriginECC
+  auth:
+    serviceKeyRef:
+      name: cloudflare-api-token-secret
+      key: api-token
