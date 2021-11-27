@@ -4,7 +4,7 @@ metadata:
   name: prod-issuer
   namespace: cert-manager
 spec:
-  signatureType: OriginECC
+  requestType: OriginECC
   auth:
     serviceKeyRef:
       name: cloudfare-origin-ca
