@@ -7,5 +7,5 @@ spec:
   signatureType: OriginECC
   auth:
     serviceKeyRef:
-      name: cloudflare-api-token-secret
-      key: api-token
+      name: cloudfare-origin-ca
+      key: api-key
