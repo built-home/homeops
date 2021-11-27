@@ -9,4 +9,9 @@ spec:
     privateKeySecretRef:
       name: letsencrypt
     solvers:
-    - http01: {}
+    - dns01:
+        cloudflare:
+          email: dillan.teagle.va@gmail.com
+          apiTokenSecretRef:
+            name: cloudflare
+            key: token
