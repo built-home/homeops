@@ -7,10 +7,9 @@ metadata:
 spec:
   secretName: teaglebuilt-tech-tls
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-production
     kind: ClusterIssuer
   commonName: teaglebuilt.tech
   dnsNames:
     - teaglebuilt.tech
-    - '*.teaglebuilt.tech'
     - '*.teaglebuilt.tech'

@@ -42,3 +42,4 @@ spec:
         tls:
         - hosts:
           - ha.teaglebuilt.tech
+          secretName: teaglebuilt-tech-tls
