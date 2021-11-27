@@ -21,7 +21,6 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: home-assistant-pvc
     mariadb:
       enabled: false
     postgresql:
@@ -34,7 +33,6 @@ spec:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: nginx
-          certmanager.io/cluster-issuer: letsencrypt
         hosts:
         - host: ha.teaglebuilt.tech
           paths:
