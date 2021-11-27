@@ -21,7 +21,7 @@ spec:
     extraArgs:
       - --dns01-recursive-nameservers=1.1.1.1:53
     ingresShim:
-      defaultIssureName: letsencrypt-prod
+      defaultIssureName: letsencrypt-production
       defaultIssureKind: ClusterIssuer
     cainjector:
       replicaCount: 1
