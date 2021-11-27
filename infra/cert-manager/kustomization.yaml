@@ -6,4 +6,3 @@ resources:
   - helm-release.yaml
   - staging.yaml
   - prod.yaml
-  - certificate.yaml
