@@ -36,5 +36,3 @@ spec:
           effect: "NoSchedule"
       publishService:
         enabled: false
-      extraArgs:
-        publish-status-address: "localhost"

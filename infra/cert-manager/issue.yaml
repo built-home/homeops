@@ -10,7 +10,7 @@ spec:
       name: letsencrypt
     solvers:
     - selector:
-          dnsZones:
+        dnsZones:
           - "teaglebuilt.tech"
     - dns01:
         cloudflare:
