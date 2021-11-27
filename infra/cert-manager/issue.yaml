@@ -9,6 +9,9 @@ spec:
     privateKeySecretRef:
       name: letsencrypt
     solvers:
+    - selector:
+          dnsZones:
+          - "teaglebuilt.tech"
     - dns01:
         cloudflare:
           email: dillan.teagle.va@gmail.com

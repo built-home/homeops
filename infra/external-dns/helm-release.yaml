@@ -7,16 +7,21 @@ spec:
   chart:
     spec:
       chart: external-dns
+      version: 5.4.15
       sourceRef:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
-      version: "=5.1.0"
   interval: 5m
   install:
     remediation:
       retries: 3
   values:
+    nameOverride: external-dns
+    interval: "5m"
+    logLevel: debug
+    sources:
+      - ingress
     image:
       registry: k8s.gcr.io
       repository: external-dns/external-dns
@@ -29,10 +34,21 @@ spec:
             value: token
       - name: CF_API_EMAIL
         value: dillan.teagle.va@gmail.com
+    provider: cloudflare
     cloudflare:
       secretName: kubernetes
       email: dillan.teagle.va@gmail.com
       proxied: true
     domainFilters:
       - "teaglebuilt.tech"
-    provider: cloudflare
+    crd:
+      create: true
+      apiversion: externaldns.k8s.io/v1alpha1
+      kind: DNSEndpoint
+    annotationFilter: "external-dns/is-public in (true)"
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 25m
+      limits:
+        memory: 250Mi
