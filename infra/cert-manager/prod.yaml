@@ -19,5 +19,5 @@ spec:
           cloudflare:
             email: dillan.teagle.va@gmail.com
             apiTokenSecretRef:
-              name: cloudflare
-              key: token
+              name: cloudflare-api-token-secret
+              key: api-token
