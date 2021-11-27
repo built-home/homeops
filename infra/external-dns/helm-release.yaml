@@ -22,10 +22,6 @@ spec:
     logLevel: debug
     sources:
       - ingress
-    image:
-      registry: k8s.gcr.io
-      repository: external-dns/external-dns
-      tag: v0.8.0
     env:
       - name: CF_API_KEY
         valueFrom:
@@ -45,8 +41,8 @@ spec:
       create: true
       apiversion: externaldns.k8s.io/v1alpha1
       kind: DNSEndpoint
-    annotationFilter: "external-dns/is-public in (true)"
     resources:
+    
       requests:
         memory: 100Mi
         cpu: 25m
