@@ -4,5 +4,5 @@ namespace: cert-manager
 resources:
   - namespace.yaml
   - helm-release.yaml
-  - staging.yaml
-  - prod.yaml
+  - issuer.yaml
+  - certificate.yaml
