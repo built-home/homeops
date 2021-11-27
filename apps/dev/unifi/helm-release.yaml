@@ -26,7 +26,8 @@ spec:
     ingress:
       enabled: true
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-production
+        kubernetes.io/ingress.class: nginx
+        cert-manager.io/cluster-issuer: letsencrypt
         nginx.ingress.kubernetes.io/backend-protocol: HTTPS
       hosts:
       - host: unifi.teaglebuilt.tech
