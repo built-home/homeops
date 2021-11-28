@@ -22,14 +22,14 @@ spec:
       TZ: "America/Chicago"
     persistence:
       config:
-        enabled: true
+        enabled: false
     mariadb:
       enabled: false
     postgresql:
       enabled: false
     influxdb:
       enabled: false
-    hostNetwork: true
+    hostNetwork: false
     ingress:
       main:
         enabled: true
