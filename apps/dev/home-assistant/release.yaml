@@ -50,3 +50,8 @@ spec:
         - hosts:
           - ha.teaglebuilt.tech
           secretName: teaglebuilt-tech-tls
+    http:
+      server_host: 0.0.0.0
+      ip_ban_enabled: true
+      login_attempts_threshold: 5
+      use_x_forwarded_for: true

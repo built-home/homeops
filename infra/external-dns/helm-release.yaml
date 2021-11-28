@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: external-dns
-      version: 5.4.15
+      version: 5.4.4
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -17,19 +17,11 @@ spec:
     remediation:
       retries: 3
   values:
-    nameOverride: external-dns
-    interval: "5m"
-    logLevel: debug
-    sources:
-      - ingress
-    env:
-      - name: CF_API_KEY
-        valueFrom:
-          secretKeyRef:
-            key: cloudflare
-            value: token
-      - name: CF_API_EMAIL
-        value: dillan.teagle.va@gmail.com
+    image:
+      registry: k8s.gcr.io
+      repository: external-dns/external-dns
+      tag: v0.9.0
+    logLevel: debugm
     provider: cloudflare
     cloudflare:
       secretName: kubernetes
@@ -37,12 +29,12 @@ spec:
       proxied: true
     domainFilters:
       - "teaglebuilt.tech"
+    createSecret: true
     crd:
       create: true
       apiversion: externaldns.k8s.io/v1alpha1
       kind: DNSEndpoint
     resources:
-    
       requests:
         memory: 100Mi
         cpu: 25m
