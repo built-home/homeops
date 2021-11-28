@@ -48,7 +48,7 @@ spec:
             pathType: Prefix
         tls:
         - hosts:
-          - teaglebuilt.tech
+          - ha.teaglebuilt.tech
           secretName: teaglebuilt-tech-tls
     http:
       server_host: 0.0.0.0
