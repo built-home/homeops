@@ -14,6 +14,8 @@ spec:
         namespace: flux-system
   interval: 5m
   values:
+    env:
+      TZ: "America/Chicago"
     controllerService:
       enabled: true
       type: LoadBalancer
@@ -29,7 +31,7 @@ spec:
         cert-manager.io/issuer: prod-issuer
         cert-manager.io/issuer-kind: OriginIssuer
         cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
-        external-dns.alpha.kubernetes.io/hostname: teaglebuilt.tech
+        external-dns.alpha.kubernetes.io/hostname: unifi.teaglebuilt.tech
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       hosts:
       - host: unifi.teaglebuilt.tech
@@ -42,8 +44,8 @@ spec:
       enabled: true
       type: LoadBalancer
     stunService:
-      enabled: false
+      enabled: true
       type: LoadBalancer
     syslogService:
-      enabled: false
+      enabled: true
       type: LoadBalancer
