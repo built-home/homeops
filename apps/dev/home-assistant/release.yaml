@@ -39,16 +39,16 @@ spec:
           cert-manager.io/issuer: prod-issuer
           cert-manager.io/issuer-kind: OriginIssuer
           cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
-          external-dns.alpha.kubernetes.io/hostname: ha.teaglebuilt.tech
-          external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+          # external-dns.alpha.kubernetes.io/hostname: ha.teaglebuilt.tech
+          # external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
         hosts:
-        - host: ha.teaglebuilt.tech
+        - host: teaglebuilt.tech
           paths:
           - path: /
             pathType: Prefix
         tls:
         - hosts:
-          - ha.teaglebuilt.tech
+          - teaglebuilt.tech
           secretName: teaglebuilt-tech-tls
     http:
       server_host: 0.0.0.0

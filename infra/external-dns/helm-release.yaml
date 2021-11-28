@@ -16,30 +16,34 @@ spec:
   install:
     remediation:
       retries: 3
+  valuesFrom:
+  - kind: Secret
+    name: cloudfare-secrets
+    valuesKey: api-token
+    targetPath: cloudfare.apiToken
   values:
     image:
       registry: k8s.gcr.io
       repository: external-dns/external-dns
       tag: v0.9.0
     logLevel: debug
-    env:
-      CF_API_KEY: ${CLOUDFARE_API_KEY}
-      CF_API_EMAIL: dillan.teagle.va@gmail.com
     provider: cloudflare
     cloudflare:
-      secretName: kubernetes
-      email: dillan.teagle.va@gmail.com
       proxied: true
+    policy: sync
+    zoneIdFilters: 
+    - f63325c249028d7c70fa6fba2f03bf0c
     domainFilters:
-      - "teaglebuilt.tech"
+    - teaglebuilt.tech
+    registry: "txt"
     createSecret: true
     crd:
       create: true
-      apiversion: externaldns.k8s.io/v1alpha1
-      kind: DNSEndpoint
+    metrics:
+      enabled: false
     resources:
       requests:
-        memory: 100Mi
+        memory: 250Mi
         cpu: 25m
       limits:
-        memory: 250Mi
+        memory: 500Mi
