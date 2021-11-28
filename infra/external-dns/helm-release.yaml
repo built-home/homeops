@@ -22,6 +22,9 @@ spec:
       repository: external-dns/external-dns
       tag: v0.9.0
     logLevel: debug
+    env:
+      CF_API_KEY: ${CLOUDFARE_API_KEY}
+      CF_API_EMAIL: dillan.teagle.va@gmail.com
     provider: cloudflare
     cloudflare:
       secretName: kubernetes
