@@ -39,7 +39,7 @@ spec:
         - path: /
           pathType: Prefix
     persistence:
-      enabled: false
+      enabled: true
     speedtestService:
       enabled: true
       type: LoadBalancer
