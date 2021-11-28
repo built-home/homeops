@@ -19,8 +19,7 @@ spec:
       repository: ghcr.io/home-assistant/home-assistant
       tag: 2021.11.5
     env:
-    - name: TZ
-      value: "America/Chicago"
+      TZ: "America/Chicago"
     persistence:
       config:
         enabled: true
