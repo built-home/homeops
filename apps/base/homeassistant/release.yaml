@@ -40,3 +40,4 @@ spec:
         tls:
         - hosts:
           - ha.teaglebuilt.tech
+        secretName: cloudflare-tls

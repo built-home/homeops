@@ -49,7 +49,7 @@ spec:
         tls:
         - hosts:
           - ha.teaglebuilt.tech
-          secretName: teaglebuilt-tech-tls
+          secretName: cloudflare-tls
     http:
       server_host: 0.0.0.0
       ip_ban_enabled: true

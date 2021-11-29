@@ -39,4 +39,4 @@ spec:
         tls:
           - hosts:
             - unifi.teaglebuilt.tech
-            secretName: teaglebuilt-tech-tls
+            secretName: cloudflare-tls
