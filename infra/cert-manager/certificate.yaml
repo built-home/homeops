@@ -9,7 +9,8 @@ spec:
   secretName: teaglebuilt-tech-tls
   dnsNames:
     - teaglebuilt.tech
-    - '*.teaglebuilt.tech'
+    - ha.teaglebuilt.tech
+    - unifi.teaglebuilt.tech
   # Duration of the certificate.
   duration: 168h
   # Renew a day before the certificate expiration.
