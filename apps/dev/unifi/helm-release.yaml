@@ -33,10 +33,13 @@ spec:
         cert-manager.io/issuer: prod-issuer
         cert-manager.io/issuer-kind: OriginIssuer
         cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
-        external-dns.alpha.kubernetes.io/hostname: unifi.teaglebuilt.tech
+        external-dns.alpha.kubernetes.io/hostname: teaglebuilt.tech
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       hosts:
       - host: unifi.teaglebuilt.tech
         paths:
         - path: /
-          pathType: ImplementationSpecific
+      tls:
+        - hosts:
+          - unifi.teaglebuilt.tech
+          secretName: teaglebuilt-tech-tls

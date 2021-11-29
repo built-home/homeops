@@ -42,13 +42,13 @@ spec:
           external-dns.alpha.kubernetes.io/hostname: teaglebuilt.tech
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
         hosts:
-        - host: teaglebuilt.tech
+        - host: ha.teaglebuilt.tech
           paths:
           - path: /
             pathType: Prefix
         tls:
         - hosts:
-          - teaglebuilt.tech
+          - ha.teaglebuilt.tech
           secretName: teaglebuilt-tech-tls
     http:
       server_host: 0.0.0.0
