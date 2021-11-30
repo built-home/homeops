@@ -51,7 +51,6 @@ spec:
           - ha.teaglebuilt.tech
           secretName: cloudflare-tls
     http:
-      server_host: 0.0.0.0
-      ip_ban_enabled: true
-      login_attempts_threshold: 5
       use_x_forwarded_for: true
+      trusted_proxies:
+        - 45.79.243.94
