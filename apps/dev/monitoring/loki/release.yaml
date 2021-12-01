@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     loki:
-      replicas: 2
+      replicas: 1
       persistence:
         enabled: false
       
@@ -46,7 +46,7 @@ spec:
                 values:
                 - loki
             topologyKey: "kubernetes.io/hostname"
-            
+
     promtail:
       enabled: true
       serviceMonitor:
