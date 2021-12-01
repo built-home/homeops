@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - unifi
   - home-assistant
+  - monitoring
