@@ -16,7 +16,7 @@ spec:
       interval: 5m
   values:
     apiService:
-      create: true
+      create: false
     extraArgs:
       kubelet-insecure-tls: true
       kubelet-preferred-address-types: InternalIP,ExternalIP,Hostname

@@ -76,7 +76,7 @@ spec:
         name: loki-gossip-ring
         targetPort: 7946
       serviceMonitor:
-        enabled: true
+        enabled: false
       podAnnotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "http-metrics"
@@ -95,9 +95,9 @@ spec:
                 - loki
             topologyKey: "kubernetes.io/hostname"
     promtail:
-      enabled: false
+      enabled: true
       serviceMonitor:
-        enabled: true
+        enabled: false
       logLevel: debug
       snippets:
         addScrapeJobLabel: true
