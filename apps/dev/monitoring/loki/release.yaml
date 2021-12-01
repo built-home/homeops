@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     loki:
-      replicas: 3
+      replicas: 2
       persistence:
         enabled: false
       config:
@@ -55,7 +55,7 @@ spec:
           configs:
           - from: "2020-10-24"
             store: boltdb-shipper
-            object_store: s3
+            object_store: filesystem
             schema: v11
             index:
               prefix: index_
