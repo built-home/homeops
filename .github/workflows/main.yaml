@@ -5,7 +5,7 @@ name: Diff Helm Releases on Pull Requests
 on: # yamllint disable-line rule:truthy
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - "cluster/**.yaml"
 
