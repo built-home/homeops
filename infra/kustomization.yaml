@@ -3,4 +3,6 @@ kind: Kustomization
 resources:
   - ingress-nginx
   - cert-manager
+  - sops.yaml
+  - secrets.yaml
   - metrics

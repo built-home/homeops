@@ -1,9 +1,12 @@
 package main
 
 import (
-	"github.com/teaglebuilt/homelab/pkg/log"
+	"log"
+
+	"github.com/teaglebuilt/homelab/pkg/command"
 )
 
 func main() {
-	log.Run("./app.log")
+	log.Printf("command")
+	command.Watch()
 }

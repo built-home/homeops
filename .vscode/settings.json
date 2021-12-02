@@ -1,0 +1,15 @@
+{
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.codeActionsOnSave": {
+            "editor.formatOnSave": false,
+            "source.organizeImports": true
+        }
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    }
+}
