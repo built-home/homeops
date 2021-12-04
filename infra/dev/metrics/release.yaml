@@ -8,15 +8,13 @@ spec:
   chart:
     spec:
       chart: metrics-server
-      version: 5.10.2
+      version: 3.7.0
       sourceRef:
         kind: HelmRepository
         name: metrics-server
         namespace: flux-system
       interval: 5m
   values:
-    apiService:
-      create: false
     extraArgs:
       kubelet-insecure-tls: true
-      kubelet-preferred-address-types: InternalIP,ExternalIP,Hostname
+      kubelet-preferred-address-types: InternalIP
