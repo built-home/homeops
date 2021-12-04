@@ -1,4 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ingress-nginx
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/instance: ingress-nginx
+
 ---
+# Source: ingress-nginx/templates/controller-serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -252,6 +261,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
   labels:
     helm.sh/chart: ingress-nginx-4.0.10
     app.kubernetes.io/name: ingress-nginx
@@ -334,6 +344,7 @@ spec:
             - --validating-webhook-key=/usr/local/certificates/key
             - --watch-ingress-without-class=true
             - --publish-status-address=localhost
+            - --enable-ssl-passthrough
           securityContext:
             capabilities:
               drop:
