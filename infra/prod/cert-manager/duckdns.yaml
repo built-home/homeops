@@ -16,7 +16,7 @@ spec:
   values:
     logLevel: 2
     duckdns:
-      token: "${DNS_TOKEN}"
+      token: "${DNSTOKEN}"
       clusterIssuer:
         staging:
           create: true
