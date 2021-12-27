@@ -10,13 +10,21 @@ spec:
   chart:
     spec:
       chart: grafana
-      version: 6.17.6
+      version: 6.20.3
       sourceRef:
         kind: HelmRepository
-        name: grafana-charts
-        namespace: monitoring
+        name: home-charts
+        namespace: flux-system
       interval: 5m
   values:
-  grafana.ini:
-    server:
-      root_url: "https://grafana.${SECRET_DOMAIN}"
+    ingress_route:
+      enabled: true
+
+    env:
+      GF_SERVER_DOMAIN: k3s-master.local
+      GF_SERVER_ROOT_URL: http://k3s-master.local/grafana
+      GF_SERVER_SERVE_FROM_SUB_PATH: true
+
+    grafana.ini:
+      server:
+        root_url: http://k3s-master.local/grafana
