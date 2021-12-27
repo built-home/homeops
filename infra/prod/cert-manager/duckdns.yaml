@@ -6,10 +6,10 @@ metadata:
 spec:
   chart:
     spec:
-      chart: duckdns
+      chart: cert-manager-webhook-duckdns
       sourceRef:
         kind: HelmRepository
-        name: ebrianne
+        name: ebrianne.github.io
         namespace: cert-manager
       version: v1.2.3
   interval: 1m
