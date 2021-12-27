@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: home-charts
+  name: homecharts
   namespace: flux-system
 spec:
   interval: 5m
