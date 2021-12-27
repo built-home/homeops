@@ -32,6 +32,17 @@ jobs:
           filtered=$(grep -zl "kind: HelmRelease.*registryUrl=" ${{ steps.filter.outputs.changed_files }} \
             | jq -nR '[inputs | select(length>0)]')
           echo ::set-output name=files::${filtered}
+  
+  populates:
+    name: Verify template variables
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: jacobtomlinson/gha-find-replace@master
+      name: Find and replace
+      with:
+        find: "${DNS_TOKEN}"
+        replace: "${{ secrets.DNS_TOKEN }}"
+
   helm-release-diff:
     name: Template Helm Releases
     runs-on: ubuntu-20.04
