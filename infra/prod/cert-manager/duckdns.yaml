@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: cert-manager-webhook-duckdns
+      chart: ebrianne.github.io/cert-manager-webhook-duckdns
       sourceRef:
         kind: HelmRepository
         name: ebrianne.github.io
