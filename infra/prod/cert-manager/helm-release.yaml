@@ -12,7 +12,7 @@ spec:
         name: jetstack
         namespace: flux-system
       version: v1.2.0
-  interval: 1m
+  interval: 5m
   values:
     installCRDs: true
     webhook:
