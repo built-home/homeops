@@ -22,4 +22,4 @@ spec:
           create: true
         production:
           create: true
-        email: dillan.teagle.va@gmail.com
+        email: "${EMAIL}"
