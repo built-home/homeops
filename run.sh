@@ -3,13 +3,13 @@ set -euo pipefail
 
 
 setup_kind() {
-    kind create cluster --config ./kubernetes/kind/cluster.yaml
+    kind create cluster --config ./kubernetes/kind/kind.yaml
 	kubectl apply -f ./kubernetes/kind/registry.yaml
 }
 
 
 bootstrap() {
-    kubectl create secret generic cloudfare --from-literal=token=${CLOUDFARE}
+    # kubectl create secret generic cloudfare --from-literal=token=${CLOUDFARE}
 
     echo "Installing Flux"
     flux bootstrap github \
@@ -23,6 +23,14 @@ bootstrap() {
 		--personal
 }
 
+playbook() {
+  echo "running playbook ${1}"
+  ansible-playbook -i ansible/inventory.ini \
+    --extra-vars \
+    "ansible_user=${ANSIBLE_USER} \
+    ansible_password=${ANSIBLE_PASS}" \
+    ansible/${1}.yaml
+}
 
 
 function help {

@@ -1,5 +1,4 @@
----
 creation_rules:
-  - encrypted_regex: '((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))'
-    pgp: >-
-      4448CD686D629F052D5F56D7BAA8F963CB8737E0
+  - encrypted_regex: '^(data|stringData)$'
+    pgp: C81136311634ECA317048E5FE0DF3E743812C130
+    path_regex: .*secret\.sops\.(yml|yaml)$
