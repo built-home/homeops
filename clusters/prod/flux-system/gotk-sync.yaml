@@ -11,7 +11,7 @@ spec:
     branch: master
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/teaglebuilt/homeops
+  url: ssh://git@github.com/built-home/homeops
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -25,8 +25,3 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  validation: client
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-gpg
