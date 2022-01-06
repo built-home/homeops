@@ -43,3 +43,12 @@ metadata:
 spec:
   interval: 5m
   url: https://k8s-at-home.com/charts/
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: ebrianne
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://ebrianne.github.io/helm-charts
