@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://charts.jetstack.io/
       chart: metallb
-      version: v0.1.0
+      version: v0.11.0
       sourceRef:
         kind: HelmRepository
         name: homecharts
