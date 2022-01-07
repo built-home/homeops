@@ -11,10 +11,10 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+  path: ./apps/prod
+  prune: true
+  validation: client
   decryption:
     provider: sops
     secretRef:
       name: sops-gpg
-  path: ./apps/prod
-  prune: true
-  validation: client
