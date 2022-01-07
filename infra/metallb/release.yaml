@@ -9,8 +9,7 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://charts.jetstack.io/
-      chart: metallb-system
-      version: v0.11.0
+      chart: metallb
       sourceRef:
         kind: HelmRepository
         name: homecharts
