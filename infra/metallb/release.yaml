@@ -8,10 +8,38 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://charts.jetstack.io/
+      # renovate: registryUrl=https://metallb.github.io/metallb
       chart: metallb
-      version: v0.1.1
+      version: 0.11.0
       sourceRef:
         kind: HelmRepository
-        name: homecharts
+        name: metallb-charts
         namespace: flux-system
+      interval: 5m
+  values:
+    configInline:
+      address-pools:
+        - name: default
+          protocol: layer2
+          addresses:
+            - 192.168.1.153-190.168.1.170
+        - name: pihole
+          protocol: layer2
+          addresses:
+            - 192.168.1.152-192.168.1.152
+    prometheusRule:
+      enabled: true
+    prometheus:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+      prometheusRule:
+        enabled: true
+    controller:
+      tolerations:
+        - key: "arm"
+          operator: "Exists"
+    speaker:
+      tolerations:
+        - key: "arm"
+          operator: "Exists"
