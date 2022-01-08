@@ -16,14 +16,3 @@ spec:
         name: homecharts
         namespace: flux-system
       interval: 5m
-  values:
-    ingress_route:
-      enabled: true
-    env:
-      GF_SERVER_DOMAIN: k3s-master.local
-      GF_SERVER_ROOT_URL: http://k3s-master.local/grafana
-      GF_SERVER_SERVE_FROM_SUB_PATH: true
-
-    grafana.ini:
-      server:
-        root_url: http://k3s-master.local/grafana
