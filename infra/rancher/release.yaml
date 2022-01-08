@@ -20,5 +20,4 @@ spec:
     ingress:
       extraAnnotations:
         kubernetes.io/ingress.class: nginx
-      tls:
-        source: rancher
+      tls: rancher
