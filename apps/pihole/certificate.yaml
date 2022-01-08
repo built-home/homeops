@@ -5,7 +5,7 @@ metadata:
   name: pihole-ca
   namespace: pihole
 spec:
-  secretName: tls-rancher-internal-ca
+  secretName: tls-pihole-internal-ca
   commonName: pihole.k3s-master.local
   isCA: true
   issuerRef:
