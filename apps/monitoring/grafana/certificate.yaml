@@ -1,0 +1,12 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: monitoring-ca
+  namespace: monitoring
+spec:
+  secretName: tls-monitoring-ca
+  commonName: monitoring.k3s-master.local
+  isCA: true
+  issuerRef:
+    name: self-signed-issuer

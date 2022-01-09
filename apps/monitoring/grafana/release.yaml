@@ -16,3 +16,17 @@ spec:
         name: homecharts
         namespace: flux-system
       interval: 5m
+  values:
+    ingress:
+      enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+    path: /grafana
+    pathType: Prefix
+    hosts:
+      - monitoring.k3s-master.local
+    tls:
+      - secretName: tls-monitoring-ca
+        hosts:
+          - monitoring.k3s-master.local
