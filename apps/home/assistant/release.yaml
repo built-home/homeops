@@ -45,3 +45,8 @@ spec:
           - hosts:
               - assistant.${DOMAIN}
             secretName: tls-home-internal-ca
+    http:
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - ${PODCIDR}
+        - ${METALLBIP}
