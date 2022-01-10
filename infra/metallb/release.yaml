@@ -22,11 +22,11 @@ spec:
         - name: default
           protocol: layer2
           addresses:
-            - 192.168.1.153-190.168.1.170
+            - "${ADDRESS_POOL}"
         - name: pihole
           protocol: layer2
           addresses:
-            - 192.168.1.152-192.168.1.152
+            - "${PIHOLE_ADDRESS}"
     prometheusRule:
       enabled: false
     prometheus:
