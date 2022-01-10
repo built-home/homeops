@@ -23,8 +23,8 @@ spec:
         cert-manager.io/issuer: self-signed-issuer
       path: /
       hosts:
-        - pihole.k3s-master.local
+        - pihole.${DOMAIN}
       tls:
         - secretName: tls-pihole-internal-ca
           hosts:
-            - pihole.k3s-master.local
+            - pihole.${DOMAIN}

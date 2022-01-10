@@ -22,11 +22,11 @@ spec:
         - name: default
           protocol: layer2
           addresses:
-            - "${ADDRESS_POOL}"
+            - ${ADDRESS_POOL}
         - name: pihole
           protocol: layer2
           addresses:
-            - "${PIHOLE_ADDRESS}"
+            - ${PIHOLE_ADDRESS}
     prometheusRule:
       enabled: false
     prometheus:

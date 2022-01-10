@@ -25,8 +25,8 @@ spec:
     path: /grafana
     pathType: Prefix
     hosts:
-      - monitoring.k3s-master.local
+      - monitoring.${DOMAIN}
     tls:
       - secretName: tls-monitoring-ca
         hosts:
-          - monitoring.k3s-master.local
+          - monitoring.${DOMAIN}

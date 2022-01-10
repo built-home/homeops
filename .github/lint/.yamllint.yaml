@@ -4,6 +4,7 @@ ignore: |
   .vscode/
   *.sops.*
   *.secret.*
+  *secret.*
   gotk-components.yaml
 extends: default
 rules:

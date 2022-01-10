@@ -17,7 +17,7 @@ spec:
       interval: 2m
   values:
     replicas: 1
-    hostname: k3s-master.local
+    hostname: ${DOMAIN}
     ingress:
       extraAnnotations:
         kubernetes.io/ingress.class: nginx
