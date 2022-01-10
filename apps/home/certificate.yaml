@@ -6,7 +6,7 @@ metadata:
   namespace: home
 spec:
   secretName: tls-home-internal-ca
-  commonName: assistant.${DOMAIN}
+  commonName: ${DOMAIN}
   isCA: true
   issuerRef:
     name: self-signed-issuer

@@ -30,7 +30,16 @@ spec:
       enabled: false
     influxdb:
       enabled: false
-    hostNetwork: false
+    hostNetwork: true
+    service:
+      main:
+        type: LoadBalancer
+        externalIPs:
+          - "${METALLBIP}"
+        externalTrafficPolicy: Local
+        ports:
+          http:
+            port: 8123
     ingress:
       main:
         enabled: true
@@ -47,9 +56,3 @@ spec:
           - hosts:
               - assistant.${DOMAIN}
             secretName: tls-home-internal-ca
-    http:
-      use_x_forwarded_for: true
-      trusted_proxies:
-        - ${PODCIDR}
-        - ${METALLBIP}
-        - 192.187.1.180/24
