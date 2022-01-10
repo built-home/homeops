@@ -38,10 +38,10 @@ spec:
           kubernetes.io/ingress.class: nginx
         hosts:
           - host: assistant.${DOMAIN}
-        paths:
-          - path: /
-            pathType: Prefix
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
-          hosts:
-            - assistant.${DOMAIN}
-          secretName: tls-home-internal-ca
+          - hosts:
+              - assistant.${DOMAIN}
+            secretName: tls-home-internal-ca
