@@ -16,6 +16,8 @@ spec:
         namespace: flux-system
   interval: 5m
   values:
+    serviceWeb:
+      type: LoadBalancer
     ingress:
       enabled: true
       annotations:
