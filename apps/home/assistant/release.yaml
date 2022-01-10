@@ -62,9 +62,6 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-        tls:
-          - hosts:
-              - assistant.${DOMAIN}
         http:
           use_x_forwarded_for: true
           trusted_proxies:
