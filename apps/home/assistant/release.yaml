@@ -30,17 +30,6 @@ spec:
       enabled: false
     influxdb:
       enabled: false
-    hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
-    service:
-      main:
-        type: LoadBalancer
-        externalIPs:
-          - "${METALLBIP}"
-        externalTrafficPolicy: Local
-        ports:
-          http:
-            port: 8123
     ingress:
       main:
         enabled: true
@@ -66,3 +55,5 @@ spec:
           use_x_forwarded_for: true
           trusted_proxies:
             - ${RPI_WORKER_01}
+            - ${METALLBIP}
+            - ${PODCIDR}
