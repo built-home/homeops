@@ -36,6 +36,8 @@ spec:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: nginx
+          kubernetes.io/tls-acme: "true"
+          nginx.org/websocket-services: home-assistant
         hosts:
           - host: assistant.${DOMAIN}
             paths:
@@ -50,3 +52,4 @@ spec:
       trusted_proxies:
         - ${PODCIDR}
         - ${METALLBIP}
+        - 192.187.1.180/24
