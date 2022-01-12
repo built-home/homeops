@@ -18,8 +18,12 @@ spec:
   values:
     serviceWeb:
       loadBalancerIP: "${METALLBIP}"
-    DNS1: 1.1.1.1
-    DNS2: ${GATEWAYIP}
+    serviceTCP:
+      type: ClusterIP
+    serviceUDP:
+      type: ClusterIP
+    hostNetwork: true
+    privileged: true
     ingress:
       enabled: true
       annotations:
