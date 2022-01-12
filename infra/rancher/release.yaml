@@ -17,7 +17,7 @@ spec:
       interval: 2m
   values:
     replicas: 1
-    hostname: ${DOMAIN}
+    hostname: rancher.${DOMAIN}
     ingress:
       extraAnnotations:
         kubernetes.io/ingress.class: nginx
