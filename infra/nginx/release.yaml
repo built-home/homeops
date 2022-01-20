@@ -13,7 +13,7 @@ spec:
       version: v4.0.13
       sourceRef:
         kind: HelmRepository
-        name: homecharts
+        name: ingress-nginx
         namespace: flux-system
   values:
     controller:
