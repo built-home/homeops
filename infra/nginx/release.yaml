@@ -20,3 +20,6 @@ spec:
       externalIPs:
         - "${RPI_MASTER_01}"
       externalTrafficPolicy: "Local"
+      tolerations:
+        - key: "arm"
+          operator: "Exists"
