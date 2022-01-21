@@ -17,5 +17,3 @@ spec:
         namespace: actions
   values:
     syncPeriod: 5m
-    authSecret:
-      github_token: ${GITHUB_TOKEN}
