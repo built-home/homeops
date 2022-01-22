@@ -36,3 +36,5 @@ spec:
         - secretName: tls-pihole-internal-ca
           hosts:
             - pihole.${DOMAIN}
+    nodeSelector:
+      - kubernetes.io/hostname: kmaster01
