@@ -4,8 +4,8 @@ kind: Certificate
 metadata:
   name: teaglebuilt-ca
 spec:
-  secretName: tls-rancher-internal-ca
-  commonName: k3s-master.local
+  secretName: tls-internal-ca
+  commonName: ${DOMAIN}
   isCA: true
   issuerRef:
     name: teaglebuilt-ca-issuer
