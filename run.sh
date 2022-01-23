@@ -2,15 +2,16 @@
 set -euo pipefail
 
 
-setup_kind() {
-    kind create cluster --config ./kubernetes/kind/kind.yaml
-	kubectl apply -f ./kubernetes/kind/registry.yaml
+decrypt() {
+    sops -d -i "${@}".yaml
 }
 
+encrypt() {
+    sops -e -i "${@}".yaml
+}
 
 bootstrap() {
-    # kubectl create secret generic cloudfare --from-literal=token=${CLOUDFARE}
-
+    kubectl create namespace flux-system
     echo "Installing Flux"
     flux bootstrap github \
     	--owner=teaglebuilt \
@@ -22,6 +23,7 @@ bootstrap() {
 		--namespace=flux-system \
 		--personal
 }
+
 
 playbook() {
   echo "running playbook ${1}"

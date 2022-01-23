@@ -13,5 +13,6 @@ client/vendor/*/
 .envrc
 
 kubeconfig.yaml
-secret/*
+secret.yaml
 keys/*
+*.pem
