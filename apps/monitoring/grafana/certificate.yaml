@@ -6,7 +6,7 @@ metadata:
   namespace: monitoring
 spec:
   secretName: tls-monitoring-ca
-  commonName: monitoring.k3s-master.local
+  commonName: monitoring.${DOMAIN}
   isCA: true
   issuerRef:
     name: self-signed-issuer
