@@ -18,7 +18,9 @@ spec:
   values:
     controller:
       externalIPs:
-        - "${RPI_MASTER_01}"
+        - ${RPI_MASTER_01}
+        - ${RPI_WORKER_01}
+        - ${RPI_WORKER_02}
       externalTrafficPolicy: "Local"
       tolerations:
         - key: "arm"

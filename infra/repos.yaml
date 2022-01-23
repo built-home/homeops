@@ -57,6 +57,15 @@ spec:
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
+  name: influxdata
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://helm.influxdata.com/
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
   name: ebrianne
   namespace: flux-system
 spec:
