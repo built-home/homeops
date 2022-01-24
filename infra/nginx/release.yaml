@@ -19,6 +19,7 @@ spec:
     controller:
       externalIPs: ["${RPI_WORKER_02}"]
       externalTrafficPolicy: "Local"
+      hostNetwork: true
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
