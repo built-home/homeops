@@ -19,10 +19,6 @@ spec:
     controller:
       externalIPs: ["${RPI_WORKER_02}"]
       externalTrafficPolicy: "Local"
-      tolerations:
-        - key: "arm"
-          operator: "Exists"
-
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
