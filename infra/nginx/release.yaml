@@ -17,10 +17,7 @@ spec:
         namespace: flux-system
   values:
     controller:
-      externalIPs:
-        - "${RPI_MASTER_01}"
-        - "${RPI_WORKER_01}"
-        - "${RPI_WORKER_02}"
+      externalIPs: ["${RPI_MASTER_01}"]
       externalTrafficPolicy: "Local"
       tolerations:
         - key: "arm"
