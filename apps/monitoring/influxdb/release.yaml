@@ -19,8 +19,8 @@ spec:
     ingress:
       enabled: true
       ingressClassName: nginx
-      hostname: influx.${DOMAIN}
+      hostname: monitoring.${DOMAIN}
       annotations:
         kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: "true"
-      path: /
+      path: /influx

@@ -21,7 +21,7 @@ spec:
     annotations:
       kubernetes.io/ingress.class: nginx
       kubernetes.io/tls-acme: "true"
-    path: /grafana
+    path: /
     pathType: Prefix
     hosts:
       - monitoring.${DOMAIN}

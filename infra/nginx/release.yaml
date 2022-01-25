@@ -18,7 +18,7 @@ spec:
   values:
     controller:
       service:
-        externalIPs: ["${RPI_WORKER_02}", "${RPI_WORKER_01}"]
+        externalIPs: ["${RPI_MASTER_01}", "${RPI_WORKER_01}", "${RPI_WORKER_02}"]
         externalTrafficPolicy: "Local"
     affinity:
       nodeAffinity:
@@ -28,9 +28,14 @@ spec:
                 - key: kubernetes.io/hostname
                   operator: In
                   values:
-                    - kworker02
+                    - kmaster01
             - matchExpressions:
                 - key: kubernetes.io/hostname
                   operator: In
                   values:
                     - kworker01
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - kworker02
