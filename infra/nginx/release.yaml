@@ -17,9 +17,9 @@ spec:
         namespace: flux-system
   values:
     controller:
-      externalIPs: ["${RPI_WORKER_02}"]
-      externalTrafficPolicy: "Local"
-      hostNetwork: true
+      service:
+        externalIPs: ["${RPI_WORKER_02}"]
+        externalTrafficPolicy: "Local"
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
