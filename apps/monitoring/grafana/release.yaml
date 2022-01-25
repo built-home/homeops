@@ -15,7 +15,6 @@ spec:
         kind: HelmRepository
         name: homecharts
         namespace: flux-system
-      interval: 5m
   values:
     ingress:
       enabled: true
