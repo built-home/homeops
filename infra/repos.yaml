@@ -71,3 +71,12 @@ metadata:
 spec:
   interval: 5m
   url: https://ebrianne.github.io/helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: 1password
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://1password.github.io/connect-helm-charts/

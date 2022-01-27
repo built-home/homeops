@@ -24,7 +24,7 @@ spec:
     hosts:
       - host: monitoring.${DOMAIN}
         paths:
-          - path: /
+          - path: /grafana
             pathType: Prefix
     tls:
       - hosts:

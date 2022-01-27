@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: pihole
-  namespace: pihole
+  namespace: network
 spec:
   releaseName: pihole
   chart:
@@ -33,7 +33,7 @@ spec:
       hosts:
         - pihole.${DOMAIN}
       tls:
-        - secretName: tls-pihole-internal-ca
+        - secretName: tls-internal-ca
           hosts:
             - pihole.${DOMAIN}
     nodeSelector:
