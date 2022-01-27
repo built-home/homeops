@@ -24,3 +24,6 @@ spec:
         kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: "true"
       path: /
+    adminUser:
+      user: ${USER}
+      password: ${PASSWORD}

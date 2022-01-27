@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: freshrss
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: freshrss
+      version: 6.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  values:
+    image:
+      repository: linuxserver/freshrss
+      tag: 1.18.0-ls88
+    env:
+      TZ: America/Chicago
+    controllerType: statefulset
+    strategy:
+      type: RollingUpdate
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        kubernetes.io/tls-acme: "true"
+      hosts:
+        - host: rss.${DOMAIN}
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - "rss.${DOMAIN}"
+          secretName: tls-internal-ca
