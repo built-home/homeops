@@ -24,16 +24,17 @@ spec:
     strategy:
       type: RollingUpdate
     ingress:
-      enabled: true
-      ingressClassName: nginx
-      annotations:
-        kubernetes.io/tls-acme: "true"
-      hosts:
-        - host: rss.${DOMAIN}
-          paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - hosts:
-            - "rss.${DOMAIN}"
-          secretName: tls-internal-ca
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          kubernetes.io/tls-acme: "true"
+        hosts:
+          - host: rss.${DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "rss.${DOMAIN}"
+            secretName: tls-internal-ca
