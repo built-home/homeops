@@ -3,12 +3,24 @@ set -euo pipefail
 
 
 decrypt() {
-    sops -d -i "${@}".yaml
+    if [ -n "${1-}" ]; then
+        echo "decrypting ${1}.yaml"
+        sops -d -i "${@}".yaml
+    else
+        sops -d -i secrets/secrets.yaml
+    fi
 }
 
+
 encrypt() {
-    sops -e -i "${@}".yaml
+    if [ -n "${1-}" ]; then
+        echo "encrypting ${1}.yaml"
+        sops -e -i "${@}".yaml
+    else
+        sops -e -i secrets/secrets.yaml
+    fi
 }
+
 
 bootstrap() {
     kubectl create namespace flux-system

@@ -6,13 +6,15 @@ on: # yamllint disable-line rule:truthy
     branches:
       - master
 
-jobs:  
-  populates:
-    name: Verify template variables
-    runs-on: ubuntu-20.04
+jobs:
+  changelog:
+    name: 'generate changelog'
+    runs-on: ubuntu-latest
     steps:
-    - uses: jacobtomlinson/gha-find-replace@master
-      name: Find and replace
-      with:
-        find: "${DNS_TOKEN}"
-        replace: "${{ secrets.DNS_TOKEN }}"
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - name: Generate Auto Changelog
+        uses: ahmadawais/action-auto-changelog@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

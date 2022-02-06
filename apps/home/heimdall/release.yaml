@@ -1,0 +1,33 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: heimdall
+  namespace: home
+spec:
+  releaseName: heimdall
+  chart:
+    spec:
+      chart: heimdall
+      version: 6.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  values:
+    image:
+      repository: ghcr.io/linuxserver/heimdall
+      tag: version-2.2.2
+    env:
+      TZ: "America/Chicago"
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
+        hosts:
+          - host: ${DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
