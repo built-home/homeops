@@ -28,11 +28,11 @@ spec:
         annotations:
           kubernetes.io/tls-acme: "true"
         hosts:
-          - host: ${DOMAIN}
+          - host: heimdall.${DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
-              - "${DOMAIN}"
+              - "heimdall.${DOMAIN}"
             secretName: tls-internal-ca
