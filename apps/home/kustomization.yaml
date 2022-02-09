@@ -6,5 +6,6 @@ resources:
   - namespace.yaml
   - issuer.yaml
   - certificate.yaml
+  - pvc.yaml
   - heimdall
   - assistant

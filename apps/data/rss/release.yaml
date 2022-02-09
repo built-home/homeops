@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: freshrss
-  namespace: default
+  namespace: data
 spec:
   interval: 5m
   chart:
@@ -16,13 +16,20 @@ spec:
         namespace: flux-system
   values:
     image:
-      repository: linuxserver/freshrss
-      tag: 1.18.0-ls88
+      repository: freshrss/freshrss
+      tag: 1.19.2
+      pullPolicy: IfNotPresent
     env:
       TZ: America/Chicago
+      DOMAIN: "https://rss.${DOMAIN}/"
     controllerType: statefulset
     strategy:
       type: RollingUpdate
+    persistence:
+      config:
+        enabled: true
+        mountPath: /var/www/FreshRSS/data
+        existingClaim: freshrss-config
     ingress:
       main:
         enabled: true
