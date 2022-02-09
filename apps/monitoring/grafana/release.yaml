@@ -16,6 +16,10 @@ spec:
         name: homecharts
         namespace: flux-system
   values:
+    env:
+      GF_SERVER_DOMAIN: monitoring.${DOMAIN}
+      GF_SERVER_ROOT_URL: http://monitoring.${DOMAIN}/grafana
+      GF_SERVER_SERVE_FROM_SUB_PATH: true
     ingress:
       enabled: true
     annotations:
