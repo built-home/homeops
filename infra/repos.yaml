@@ -80,3 +80,12 @@ metadata:
 spec:
   interval: 5m
   url: https://1password.github.io/connect-helm-charts/
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: grafana
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://grafana.github.io/helm-charts

@@ -17,19 +17,19 @@ spec:
         namespace: flux-system
   values:
     env:
-      GF_SERVER_DOMAIN: monitoring.${DOMAIN}
-      GF_SERVER_ROOT_URL: http://monitoring.${DOMAIN}/grafana
+      GF_SERVER_DOMAIN: grafana.${DOMAIN}
+      GF_SERVER_ROOT_URL: http://grafana.${DOMAIN}
       GF_SERVER_SERVE_FROM_SUB_PATH: true
     ingress:
       enabled: true
     annotations:
       kubernetes.io/ingress.class: nginx
       kubernetes.io/tls-acme: "true"
-    path: /grafana
+    path: /
     pathType: Prefix
     hosts:
-      - monitoring.${DOMAIN}
+      - grafana.${DOMAIN}
     tls:
       - secretName: tls-internal-ca
         hosts:
-          - monitoring.${DOMAIN}
+          - grafana.${DOMAIN}

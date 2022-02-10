@@ -19,7 +19,7 @@ spec:
     ingress:
       enabled: true
       ingressClassName: nginx
-      hostname: monitoring.${DOMAIN}
+      hostname: influxdb.${DOMAIN}
       annotations:
         kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: "true"
