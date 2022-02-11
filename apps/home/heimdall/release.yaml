@@ -38,7 +38,7 @@ spec:
           - hosts:
               - "heimdall.${DOMAIN}"
             secretName: tls-internal-ca
-  persistence:
-    config:
-      enabled: true
-      existingClaim: configurations
+    persistence:
+      config:
+        enabled: true
+        existingClaim: configurations
