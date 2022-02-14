@@ -44,4 +44,4 @@ spec:
         tls:
           - hosts:
               - "rss.${DOMAIN}"
-            secretName: tls-internal-ca
+            secretName: tls-data-internal-ca

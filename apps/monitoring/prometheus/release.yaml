@@ -31,7 +31,7 @@ spec:
         paths:
           - /
         tls:
-          - secretName: tls-internal-ca
+          - secretName: tls-monitoring-internal-ca
             hosts:
               - prometheus.${DOMAIN}
       prometheusSpec:

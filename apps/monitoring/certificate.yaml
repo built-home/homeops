@@ -6,7 +6,7 @@ metadata:
   namespace: monitoring
 spec:
   secretName: tls-internal-ca
-  commonName: monitoring.${DOMAIN}
+  commonName: ${DOMAIN}
   isCA: true
   issuerRef:
-    name: teaglebuilt-ca-issuer
+    name: self-signed-issuer

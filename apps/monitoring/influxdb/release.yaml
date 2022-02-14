@@ -24,3 +24,5 @@ spec:
         kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: "true"
       path: /
+      tls: true
+      secretName: tls-monitoring-internal-ca
