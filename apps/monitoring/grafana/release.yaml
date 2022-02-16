@@ -16,13 +16,24 @@ spec:
         name: grafana
         namespace: flux-system
   values:
-    env:
-      GF_SERVER_DOMAIN: grafana.${DOMAIN}
-      GF_SERVER_ROOT_URL: http://grafana.${DOMAIN}
-      GF_SERVER_SERVE_FROM_SUB_PATH: false
+    image:
+      repository: ghcr.io/k8s-at-home/grafana
+    replicas: 1
     admin:
       userKey: ${USER}
       passwordKey: ${PASSWORD}
+    grafana.ini:
+      server:
+        root_url: "http://grafana.${DOMAIN}"
+      paths:
+        data: /var/lib/grafana/data
+        logs: /var/log/grafana
+        plugins: /var/lib/grafana/plugins
+        provisioning: /etc/grafana/provisioning
+      analytics:
+        check_for_updates: false
+      log:
+        mode: console
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
@@ -78,6 +89,11 @@ spec:
       hosts:
         - grafana.${DOMAIN}
       tls:
-        - secretName: tls-monitoring-internal-ca
-          hosts:
+        - hosts:
             - grafana.${DOMAIN}
+          secretName: tls-monitoring-internal-ca
+    serviceAccount:
+      create: true
+      autoMount: true
+    persistence:
+      enabled: false
