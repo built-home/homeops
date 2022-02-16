@@ -5,3 +5,4 @@ namespace: network
 resources:
   - namespace.yaml
   - unifi
+  - pihole

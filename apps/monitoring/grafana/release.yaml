@@ -23,14 +23,6 @@ spec:
     admin:
       userKey: ${USER}
       passwordKey: ${PASSWORD}
-    grafana.ini:
-      server:
-        root_url: "https://grafana.${DOMAIN}"
-      paths:
-        data: /var/lib/grafana/data
-        logs: /var/log/grafana
-        plugins: /var/lib/grafana/plugins
-        provisioning: /etc/grafana/provisioning
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
