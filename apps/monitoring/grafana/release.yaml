@@ -17,6 +17,8 @@ spec:
         namespace: flux-system
   values:
     replicas: 1
+    adminUser: ${USER}
+    adminPassword: ${PASSWORD}
     grafana.ini:
       server:
         root_url: "http://grafana.${DOMAIN}"
@@ -29,6 +31,15 @@ spec:
         check_for_updates: false
       log:
         mode: console
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+          - name: Prometheus
+            type: prometheus
+            access: proxy
+            url: http://prometheus-kube-prometheus-prometheus:9090
+            isDefault: true
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
@@ -41,18 +52,6 @@ spec:
             editable: true
             options:
               path: /var/lib/grafana/dashboards/default
-    datasources:
-      datasources.yaml:
-        apiVersion: 1
-        deleteDatasources:
-          - name: Prometheus
-            orgId: 1
-        datasources:
-          - name: Prometheus
-            type: prometheus
-            access: proxy
-            url: http://prometheus-kube-prometheus-prometheus:9090
-            isDefault: true
     dashboards:
       default:
         flux-cluster:
