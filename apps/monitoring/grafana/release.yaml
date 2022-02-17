@@ -86,8 +86,3 @@ spec:
         - hosts:
             - grafana.${DOMAIN}
           secretName: tls-monitoring-internal-ca
-    serviceAccount:
-      create: true
-      autoMount: true
-    persistence:
-      enabled: false
