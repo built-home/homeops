@@ -71,6 +71,7 @@ spec:
       - grafana-piechart-panel
       - grafana-worldmap-panel
       - grafana-clock-panel
+      - devopsprodigy-kubegraf-app
     serviceMonitor:
       enabled: true
     ingress:
