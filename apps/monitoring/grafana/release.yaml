@@ -68,7 +68,6 @@ spec:
         enabled: true
         searchNamespace: ALL
     plugins:
-      - grafana-piechart-panel
       - grafana-worldmap-panel
       - grafana-clock-panel
       - devopsprodigy-kubegraf-app
