@@ -72,9 +72,7 @@ spec:
         enabled: true
         searchNamespace: ALL
     plugins:
-      - grafana-worldmap-panel
-      - grafana-clock-panel
-      - devopsprodigy-kubegraf-app
+      - grafana-kubernetes-app
     serviceMonitor:
       enabled: true
     ingress:
