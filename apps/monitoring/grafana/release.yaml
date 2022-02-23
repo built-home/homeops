@@ -16,6 +16,10 @@ spec:
         name: grafana
         namespace: flux-system
   values:
+    image:
+      repository: grafana/grafana
+      tag: 8.3.6
+      pullPolicy: Always
     replicas: 1
     adminUser: ${USER}
     adminPassword: ${PASSWORD}
@@ -69,6 +73,7 @@ spec:
         searchNamespace: ALL
     plugins:
       - grafana-worldmap-panel
+      - grafana-clock-panel
       - devopsprodigy-kubegraf-app
     serviceMonitor:
       enabled: true
