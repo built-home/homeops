@@ -9,4 +9,4 @@ spec:
   commonName: ${DOMAIN}
   isCA: true
   issuerRef:
-    name: self-signed-issuer
+    name: teaglebuilt-ca-issuer
