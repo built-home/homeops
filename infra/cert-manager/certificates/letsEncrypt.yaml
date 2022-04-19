@@ -2,10 +2,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: cloudfare-ca
+  name: nginx-ca
 spec:
-  secretName: tls-internal-ca
+  secretName: tls-letsEncrypt-ca
   commonName: ${DOMAIN}
   isCA: true
   issuerRef:
-    name: cloudfare-issuer
+    name: letsencrypt-issuer
