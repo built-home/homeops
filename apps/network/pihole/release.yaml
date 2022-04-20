@@ -37,7 +37,7 @@ spec:
           hosts:
             - pihole.${DOMAIN}
     nodeSelector:
-      - kubernetes.io/hostname: ${RPI_MASTER_01}
+      kubernetes.io/hostname: ${RPI_MASTER_01}
     dnsmasq:
       customDnsEntries:
         - address=/.${DOMAIN}/${RPI_MASTER_01}
