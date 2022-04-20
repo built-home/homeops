@@ -2,7 +2,7 @@
 name: Deploy changes to cluster
 
 on: # yamllint disable-line rule:truthy
-  push:
+  pull_request:
     branches:
       - master
 
