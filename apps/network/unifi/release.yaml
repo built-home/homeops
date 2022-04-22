@@ -35,4 +35,4 @@ spec:
         tls:
           - hosts:
               - unifi.${DOMAIN}
-            secretName: tls-internal-ca
+            secretName: tls-monitoring-internal-ca
