@@ -2,11 +2,11 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: monitoring-ca
-  namespace: monitoring
+  name: network-ca
+  namespace: network
 spec:
-  secretName: tls-monitoring-internal-ca
+  secretName: tls-network-internal-ca
   commonName: ${DOMAIN}
   isCA: true
   issuerRef:
-    name: monitoring
+    name: self-signed-issuer
