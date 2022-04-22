@@ -79,7 +79,7 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: nginx
-        cert-manager.io/cluster-issuer: "teaglebuilt-ca-issuer"
+        cert-manager.io/cluster-issuer: self-signed-issuer
       path: /
       pathType: Prefix
       hosts:

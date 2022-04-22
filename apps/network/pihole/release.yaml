@@ -27,13 +27,14 @@ spec:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: nginx
+        kubernetes.io/ingress.class: "nginx"
         cert-manager.io/issuer: self-signed-issuer
+        kubernetes.io/tls-acme: "true"
       path: /
       hosts:
         - pihole.${DOMAIN}
       tls:
-        - secretName: tls-network-internal-ca
+        - secretName: tls-internal-ca
           hosts:
             - pihole.${DOMAIN}
 
