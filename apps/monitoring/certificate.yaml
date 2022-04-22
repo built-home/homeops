@@ -9,4 +9,4 @@ spec:
   commonName: ${DOMAIN}
   isCA: true
   issuerRef:
-    name: monitoring
+    name: self-signed-issuer

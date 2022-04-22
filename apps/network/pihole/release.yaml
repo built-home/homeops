@@ -28,7 +28,7 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: nginx
-        cert-manager.io/issuer: tls-network-internal-ca
+        cert-manager.io/issuer: self-signed-issuer
       path: /
       hosts:
         - pihole.${DOMAIN}
@@ -36,8 +36,4 @@ spec:
         - secretName: tls-network-internal-ca
           hosts:
             - pihole.${DOMAIN}
-    nodeSelector:
-      kubernetes.io/hostname: ${RPI_MASTER_01}
-    dnsmasq:
-      customDnsEntries:
-        - address=/.${DOMAIN}/${RPI_MASTER_01}
+
