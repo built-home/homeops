@@ -8,7 +8,6 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://charts.jetstack.io/
       chart: ingress-nginx
       version: v4.0.13
       sourceRef:
