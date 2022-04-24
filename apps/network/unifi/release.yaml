@@ -26,7 +26,10 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "nginx"
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+          cert-manager.io/cluster-issuer: self-signed-issuer
+          kubernetes.io/tls-acme: "true"
         hosts:
           - host: unifi.${DOMAIN}
             paths:
@@ -35,4 +38,4 @@ spec:
         tls:
           - hosts:
               - unifi.${DOMAIN}
-            secretName: tls-network-internal-ca
+
