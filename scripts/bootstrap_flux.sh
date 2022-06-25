@@ -12,12 +12,34 @@ if [ -z "${GITHUB_TOKEN}" ]; then
 fi
 
 
-echo "bootstap homeops in flux-system namespace"
-flux bootstrap github \
-     --owner "${ORGANIZATION}" \
-     --repository "${REPO_NAME}" \
-     --branch "${REPO_BRANCH}" \
-     --path "${REPO_PATH}" \
-     --network-policy=false \
-     --watch-all-namespaces=true \
-     --namespace=flux-system
+_install_flux() {
+    echo "bootstap homeops in flux-system namespace"
+    flux bootstrap github \
+        --owner "${ORGANIZATION}" \
+        --repository "${REPO_NAME}" \
+        --branch "${REPO_BRANCH}" \
+        --path "${REPO_PATH}" \
+        --network-policy=false \
+        --watch-all-namespaces=true \
+        --namespace=flux-system
+}
+
+
+_setup_crds {
+    echo "installing certmanager CRD's, needs to be removed."
+    kubectl apply -f \
+        https://github.com/cert-manager/cert-manager/releases/download/v1.7.1/cert-manager.crds.yaml
+}
+
+_setup_secrets {
+    echo "setting up cluster secret encryption"
+    gpg --export-secret-keys --armor \
+        ${GPG_FINGERPRINT} | kubectl create secret generic sops-gpg } \
+            --namespace=flux-system --from-file=sops.asc=/dev/stdin
+}
+
+function setup_flux() {
+    _install_flux
+    _setup_secrets
+    _setup_crds
+}
