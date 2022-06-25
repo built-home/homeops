@@ -1,15 +1,4 @@
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: GitRepository
-metadata:
-  name: apps
-  namespace: flux-system
-spec:
-  interval: 5m
-  url: https://github.com/built-home/homeops
-  ref:
-    branch: master
----
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
@@ -26,6 +15,10 @@ spec:
   path: ./apps
   prune: true
   validation: client
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
   postBuild:
     substituteFrom:
       - kind: Secret
