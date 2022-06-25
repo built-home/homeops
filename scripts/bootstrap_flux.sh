@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-REPO_OWNER=${REPO_OWNER:-teaglebuilt}
-REPO_NAME=${REPO_NAME:-homelab}
+ORGANIZATION=${ORGANIZATION:-built-home}
+REPO_NAME=${REPO_NAME:-homeops}
 REPO_BRANCH=${REPO_BRANCH:-master}
-REPO_PATH=${REPO_PATH:-kubernetes/clusters/dev}
+REPO_PATH=${REPO_PATH:-/clusters}
 
 
 if [ -z "${GITHUB_TOKEN}" ]; then
@@ -14,11 +14,10 @@ fi
 
 echo "bootstap homeops in flux-system namespace"
 flux bootstrap github \
-     --owner "${REPO_OWNER}" \
+     --owner "${ORGANIZATION}" \
      --repository "${REPO_NAME}" \
      --branch "${REPO_BRANCH}" \
      --path "${REPO_PATH}" \
      --network-policy=false \
      --watch-all-namespaces=true \
-     --namespace=flux-system \
-     --personal
+     --namespace=flux-system
