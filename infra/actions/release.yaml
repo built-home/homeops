@@ -18,5 +18,5 @@ spec:
   values:
     syncPeriod: 5m
     authSecret:
-      create: false
-      name: actions-runner-controller-auth
+      create: true
+      github_token: ${GITHUB_TOKEN}
