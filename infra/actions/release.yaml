@@ -18,5 +18,5 @@ spec:
   values:
     syncPeriod: 5m
     authSecret:
-      create: true
-      github_token: ${GITHUB_TOKEN}
+      create: false
+      name: controller-manager
