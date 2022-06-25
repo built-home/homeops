@@ -20,3 +20,5 @@ spec:
     authSecret:
       create: false
       name: controller-manager
+      github_basicauth_username: ${GITHUB_USERNAME}
+      github_basicauth_password: ${GITHUB_PASSWORD}
