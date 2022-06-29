@@ -1,0 +1,8 @@
+apiVersion: nfs.proxmox-provider.crossplane.io/v1alpha1
+kind: NFS
+metadata:
+  name: network-storage
+spec:
+  forProvider:
+    ipAddress: ""
+    mountPath: ""

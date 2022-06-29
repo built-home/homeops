@@ -32,39 +32,39 @@
 
     - name: Install SOPS
       apt:
-        deb: https://github.com/mozilla/sops/releases/download/v{{ SOPS_VERSION }}/sops_{{ SOPS_VERSION }}_amd64.deb
-      when: ansible_architecture == "x86_64"
+        deb: https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux.arm64
+      when: ansible_architecture == "arm64"
 
-    - name: Install SOPS GPG key
-      shell: >
-        echo "{{ SOPS_GPG }}"| gpg --batch
-        --pinentry-mode loopback
-        --import /dev/stdin
-      register: result
-      changed_when:
-      - "result.stderr is not search('not changed')"
+    # - name: Install SOPS GPG key
+    #   shell: >
+    #     echo "{{ SOPS_GPG }}"| gpg --batch
+    #     --pinentry-mode loopback
+    #     --import /dev/stdin
+    #   register: result
+    #   changed_when:
+    #   - "result.stderr is not search('not changed')"
 
-    - name: Create secret with SOPS GPG key
-      shell: >
-        sudo kubectl create -n {{ FLUX_NAMESPACE }} secret generic sops-gpg
-        --save-config --dry-run=client
-        --from-literal=sops.asc="{{ SOPS_GPG }}"
-        -o yaml
-        | sudo kubectl apply -f -
-      run_once: True
-      register: result
-      changed_when:
-      - "result.stdout is search('created')"
+    # - name: Create secret with SOPS GPG key
+    #   shell: >
+    #     sudo kubectl create -n {{ FLUX_NAMESPACE }} secret generic sops-gpg
+    #     --save-config --dry-run=client
+    #     --from-literal=sops.asc="{{ SOPS_GPG }}"
+    #     -o yaml
+    #     | sudo kubectl apply -f -
+    #   run_once: True
+    #   register: result
+    #   changed_when:
+    #   - "result.stdout is search('created')"
 
-    - name: "Deploy flux to cluster if crd fluxcd.io missing"
-      shell: > 
-        sudo kubectl apply -k ../{{ FLUX_GIT_PATH }}
-      environment:
-        KUBECONFIG: "{{ KUBECTL_CONFIG }}"
-      delegate_to: localhost
-      register: result
-      changed_when:
-      - "result.stdout is search('created')"
-      until: result is succeeded
-      retries: 60
-      delay: 5
+    # - name: "Deploy flux to cluster if crd fluxcd.io missing"
+    #   shell: > 
+    #     sudo kubectl apply -k ../{{ FLUX_GIT_PATH }}
+    #   environment:
+    #     KUBECONFIG: "{{ KUBECTL_CONFIG }}"
+    #   delegate_to: localhost
+    #   register: result
+    #   changed_when:
+    #   - "result.stdout is search('created')"
+    #   until: result is succeeded
+    #   retries: 60
+    #   delay: 5

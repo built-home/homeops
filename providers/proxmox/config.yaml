@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: crossplane-system
+  name: example-provider-secret
+type: Opaque
+data:
+  credentials: ${PROXMOX_PROVIDER_CREDENTIALS}
+---
+apiVersion: template.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: proxmox-config
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: proxmox-provider-secret
+      key: credentials
