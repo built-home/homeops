@@ -10,11 +10,13 @@ spec:
     spec:
       # renovate: registryUrl=https://charts.jetstack.io/
       chart: actions-runner-controller
-      version: v0.14.0
+      version: v0.19.1
       sourceRef:
         kind: HelmRepository
         name: actions-runner-controller
         namespace: actions
   values:
     syncPeriod: 5m
-
+    authSecret:
+      create: false
+      name: actions-runner-controller-auth
