@@ -17,6 +17,4 @@ spec:
         namespace: actions
   values:
     syncPeriod: 5m
-    authSecret:
-      create: false
-      name: controller-manager
+
