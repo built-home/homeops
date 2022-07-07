@@ -6,5 +6,3 @@ resources:
   - metallb
   - cert-manager
   - nginx
-  - actions
-
