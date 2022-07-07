@@ -16,6 +16,8 @@ spec:
         name: influxdata
         namespace: flux-system
   values:
+    setDefaultUser:
+      enabled: true
     ingress:
       enabled: true
       ingressClassName: nginx
