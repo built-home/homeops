@@ -41,6 +41,11 @@ _setup_secrets {
         --from-literal=github_app_id=${GITHUB_APP_ID} \
         --from-literal=github_app_installation_id=${GITHUB_INSTALLATION_ID} \
         --from-literal=github_app_private_key=${GITHUB_PRIVATE_KEY}
+
+    TOKEN=$(head -c 12 /dev/urandom | shasum | cut -d ' ' -f1)
+    echo "generated homeops receiver token: $TOKEN"
+    kubectl -n flux-system create secret generic webhook-token \	
+        --from-literal=token=$TOKEN
 }
 
 function setup_flux() {

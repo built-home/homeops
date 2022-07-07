@@ -1,0 +1,18 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: homeops-receiver
+  namespace: flux-system
+spec:
+  rules:
+  - host: homeops-receiver.${DOMAIN}
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: homeops-receiver
+            port:
+              number: 80
