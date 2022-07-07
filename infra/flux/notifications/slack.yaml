@@ -7,4 +7,4 @@ spec:
   type: slack
   channel: general
   secretRef:
-    name: slack-url
+    name: ${SLACK_WEBHOOK_URL}
