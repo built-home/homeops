@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: webhook
+  name: homeops-webhook
   namespace: flux-system
 spec:
   interval: 60m
