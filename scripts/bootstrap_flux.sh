@@ -37,7 +37,7 @@ _setup_secrets {
         ${GPG_FINGERPRINT} | kubectl create secret generic sops-gpg } \
             --namespace=flux-system --from-file=sops.asc=/dev/stdin
 
-    kubectl create secret generic controller-manager \
+    kubectl create secret generic actions-runner-controller-auth \
         --from-literal=github_app_id=${GITHUB_APP_ID} \
         --from-literal=github_app_installation_id=${GITHUB_INSTALLATION_ID} \
         --from-literal=github_app_private_key=${GITHUB_PRIVATE_KEY}
