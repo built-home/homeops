@@ -7,4 +7,4 @@ spec:
   type: slack
   channel: ops-alerts
   secretRef:
-    name: ${SLACK_WEBHOOK_URL}
+    name: slack-url
