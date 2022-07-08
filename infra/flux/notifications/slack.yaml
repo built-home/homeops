@@ -5,6 +5,6 @@ metadata:
   namespace: flux-system
 spec:
   type: slack
-  channel: general
+  channel: ops-alerts
   secretRef:
     name: ${SLACK_WEBHOOK_URL}
