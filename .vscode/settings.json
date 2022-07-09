@@ -1,4 +1,5 @@
 {
+    "ansible.ansibleLint.path": ".github/lint/.ansible-lint",
     "go.useLanguageServer": true,
     "[go]": {
         "editor.codeActionsOnSave": {
