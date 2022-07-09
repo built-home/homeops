@@ -6,5 +6,6 @@ metadata:
 spec:
   type: slack
   channel: ops-alerts
+  address: https://github.com/built-home/homeops
   secretRef:
     name: slack-url
