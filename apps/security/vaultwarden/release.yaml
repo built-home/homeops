@@ -63,10 +63,10 @@ spec:
         tls:
           - hosts:
               - "vault.${DOMAIN}"
-    # persistence:
-    #   config:
-    #     enabled: true
-    #     existingClaim: vaultwarden-config
+    persistence:
+      config:
+        enabled: true
+        existingClaim: vaultwarden-config
     resources:
       requests:
         cpu: 15m
