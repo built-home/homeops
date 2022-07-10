@@ -23,7 +23,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: spikecodes/libreddit
-      tag: latest
+      tag: arm
     service:
       main:
         ports:
