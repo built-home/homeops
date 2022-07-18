@@ -44,4 +44,4 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: data-tls-secret
+            secretName: manual-ca-bx6mp
