@@ -1,0 +1,12 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: home-ca
+  namespace: home
+spec:
+  secretName: tls-home-internal-ca
+  commonName: ${DOMAIN}
+  isCA: true
+  issuerRef:
+    name: teaglebuilt-ca-issuer
