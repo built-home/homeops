@@ -3,9 +3,16 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: teaglebuilt-ca
+  namespace: cert-manager
 spec:
+  isCA: true
+  duration: 43800h
   secretName: tls-internal-ca
   commonName: ${DOMAIN}
-  isCA: true
+  privateKey:
+    algorithm: ECDSA
+    size: 256
   issuerRef:
     name: teaglebuilt-ca-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
