@@ -5,6 +5,5 @@ namespace: home
 resources:
   - namespace.yaml
   - pvc.yaml
-  - certificate.yaml
   - heimdall
   - plex
