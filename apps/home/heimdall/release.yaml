@@ -35,7 +35,7 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - secretName: tls-home-internal-ca
+          - secretName: tls-internal-ca
             hosts:
               - "heimdall.${DOMAIN}"
     persistence:
