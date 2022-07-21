@@ -13,3 +13,4 @@ spec:
       name: '*'
     - kind: Kustomization
       name: '*'
+  suspend: false
