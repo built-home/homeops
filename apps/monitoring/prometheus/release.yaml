@@ -30,9 +30,6 @@ spec:
           - prometheus.${DOMAIN}
         paths:
           - /
-        tls:
-          hosts:
-            - prometheus.${DOMAIN}
       prometheusSpec:
         storageSpec:
           volumeClaimTemplate:
