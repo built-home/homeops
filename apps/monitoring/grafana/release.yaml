@@ -88,4 +88,3 @@ spec:
       tls:
         - hosts:
             - grafana.${DOMAIN}
-          secretName: tls-internal-ca

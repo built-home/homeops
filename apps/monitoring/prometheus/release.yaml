@@ -20,7 +20,7 @@ spec:
     prometheus:
       server:
         persistentVolume:
-          enabled: true
+          enabled: false
       ingress:
         enabled: true
         annotations:
@@ -33,7 +33,6 @@ spec:
         tls:
           hosts:
             - prometheus.${DOMAIN}
-          secretName: tls-internal-ca
       prometheusSpec:
         storageSpec:
           volumeClaimTemplate:
