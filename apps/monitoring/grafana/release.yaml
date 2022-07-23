@@ -15,6 +15,9 @@ spec:
         kind: HelmRepository
         name: grafana
         namespace: flux-system
+  valuesFrom:
+    - kind: ConfigMap
+      name: grafana-dashboards
   values:
     image:
       repository: grafana/grafana
@@ -56,14 +59,6 @@ spec:
             editable: true
             options:
               path: /var/lib/grafana/dashboards/default
-    dashboards:
-      default:
-        flux-cluster:
-          url: https://raw.githubusercontent.com/fluxcd/flux2/main/manifests/monitoring/grafana/dashboards/cluster.json
-          datasource: Prometheus
-        flux-control-plane:
-          url: https://raw.githubusercontent.com/fluxcd/flux2/main/manifests/monitoring/grafana/dashboards/control-plane.json
-          datasource: Prometheus
     sidecar:
       dashboards:
         enabled: true

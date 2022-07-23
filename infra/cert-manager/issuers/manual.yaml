@@ -5,4 +5,4 @@ metadata:
   name: manual-issuer
 spec:
   ca:
-    secretName: manual-ca-secret
+    secretName: tls-internal-ca
