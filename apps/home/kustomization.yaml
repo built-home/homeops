@@ -6,4 +6,3 @@ resources:
   - namespace.yaml
   - pvc.yaml
   - heimdall
-  - plex
