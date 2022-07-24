@@ -22,6 +22,8 @@ spec:
       runAsGroup: 0
       runAsNonRoot: false
       runAsUser: 0
+    grafana:
+      enabled: false
     prometheus:
       server:
         persistentVolume:
@@ -33,8 +35,9 @@ spec:
           cert-manager.io/cluster-issuer: teaglebuilt-ca-issuer
         hosts:
           - prometheus.${DOMAIN}
-        paths:
-          - /
+        tls:
+          - hosts:
+              - prometheus.${DOMAIN}
       prometheusSpec:
         storageSpec:
           volumeClaimTemplate:
@@ -44,5 +47,3 @@ spec:
               resources:
                 requests:
                   storage: 2Gi
-    grafana:
-      enabled: false
