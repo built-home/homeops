@@ -17,6 +17,7 @@ spec:
         namespace: flux-system
       interval: 60m
   values:
+    fullnameOverride: prometheus
     securityContext:
       fsGroup: 65534
       runAsGroup: 0
@@ -30,6 +31,7 @@ spec:
           enabled: false
       ingress:
         enabled: true
+        pathType: Prefix
         annotations:
           kubernetes.io/ingress.class: nginx
           cert-manager.io/cluster-issuer: teaglebuilt-ca-issuer
