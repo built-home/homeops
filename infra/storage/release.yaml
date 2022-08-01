@@ -20,7 +20,7 @@ spec:
       interval: 5m
   values:
     nfs:
-      server: ${FILESERVER_IP}
+      server: "${FILESERVER_IP}"
       path: "/mnt/share"
     storageClass:
       defaultClass: true
