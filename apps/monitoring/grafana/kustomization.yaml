@@ -6,4 +6,4 @@ resources:
 configMapGenerator:
   - name: grafana-dashboards
     files:
-      - dashboards/cluster.json
+      - dashboards/flux-cluster.json
