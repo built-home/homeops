@@ -4,8 +4,8 @@ kind: HelmRelease
 metadata:
   name: nfs-subdir-external-provisioner
   namespace: kube-system
-  labels:
-    # kustomize.toolkit.fluxcd.io/substitute: "disabled"
+  # labels:
+  #   kustomize.toolkit.fluxcd.io/substitute: "disabled"
 spec:
   interval: 5m
   chart:
@@ -21,7 +21,7 @@ spec:
   values:
     nfs:
       server: ${FILESERVER_IP}
-      path: "/mnt/share"
+      path: /mnt/share
     storageClass:
       defaultClass: true
       pathPattern: "${.PVC.namespace}-${.PVC.name}"
