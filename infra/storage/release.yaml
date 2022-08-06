@@ -23,7 +23,7 @@ spec:
       pullPolicy: IfNotPresent
     nfs:
       server: "192.168.0.6"
-      path: "/mnt/share"
+      path: "/srv/nfs4/backups"
     storageClass:
       defaultClass: true
       allowVolumeExpansion: true
