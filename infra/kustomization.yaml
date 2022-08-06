@@ -7,4 +7,3 @@ resources:
   - cert-manager
   - nginx
   - flux
-  - storage
