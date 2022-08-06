@@ -4,7 +4,3 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - release.yaml
-configMapGenerator:
-  - name: grafana-dashboards
-    files:
-      - dashboards/flux-cluster.json
