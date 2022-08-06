@@ -33,7 +33,6 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
         annotations:
           kubernetes.io/ingress.class: nginx
           cert-manager.io/cluster-issuer: self-signed-issuer
@@ -46,4 +45,3 @@ spec:
         tls:
           - hosts:
               - "rss.${DOMAIN}"
-            secretName: tls-data-internal-ca
