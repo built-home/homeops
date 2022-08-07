@@ -20,7 +20,6 @@ spec:
       enabled: true
     ingress:
       enabled: true
-      ingressClassName: nginx
       hostname: influxdb.${DOMAIN}
       annotations:
         kubernetes.io/ingress.class: nginx

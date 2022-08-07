@@ -15,6 +15,9 @@ spec:
         kind: HelmRepository
         name: grafana
         namespace: flux-system
+  valuesFrom:
+    - kind: ConfigMap
+      name: grafana-dashboards
   values:
     image:
       repository: grafana/grafana
