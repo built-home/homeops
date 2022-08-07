@@ -7,5 +7,6 @@ metadata:
 spec:
   type: slack
   channel: ops-alerts
+  address: https://hooks.slack.com/services/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
   secretRef:
     name: slack-url
