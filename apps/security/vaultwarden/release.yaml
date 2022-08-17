@@ -50,10 +50,6 @@ spec:
                   port: 3012
               - path: /notifications/hub/negotiate
                 pathType: Prefix
-        tls:
-          - hosts:
-              - vault.${DOMAIN}
-            secretName: "tls-internal-ca"
       admin:
         enabled: true
         ingressClassName: "nginx"

@@ -45,4 +45,4 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: tls-internal-ca
+            secretName: -ca
